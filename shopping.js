@@ -43,7 +43,68 @@ const grocerys = [
 ]
 
 for (const grocery of grocerys) {
-    console.log(`total price is $${grocery.price}`)
+    console.log(`The cost of ${grocery.item} is $${grocery.price}`)
+}
+const beer = {
+    item: "Beer",
+    price: 8.50,
+    brand: "Corona",
+    type: "bottle",
+    size: "6 pack"
 }
 
-//would like to know how to add together.
+const tortillas = {
+    item: "Tortillas",
+    price: 3.99,
+    brand: "El Gato",
+    type: "Flour",
+    size: "25 count"
+}
+
+const cheese = {
+    item: "Cheese",
+    price: 6.99,
+    brand: "Kroger",
+    type: "Cheddar",
+    size: "1 lb"
+}
+ 
+const jalapenos = {
+    item: "Jalapenos",
+    price: 0.59,
+    brand: "Kroger",
+    type: "Fresh",
+    size: "Medium"
+}
+    
+const wine = {
+    item: "Wine",
+    price: 25.00,
+    brand: "Coppola",
+    type: "Cab Sav",
+    size: "1 bottle"
+}
+ 
+const paperTowels = {
+    item: "Paper Towels",
+    price: 20.00,
+    brand: "Bounty",
+    type: "Mega Roll",
+    size: "12 Rolls"
+}
+const addToShoppingList = (groceryObject) => {
+        const lastIndex = grocerys.length - 1
+        const currentLastGrocery = grocerys[lastIndex]
+        const maxId = currentLastGrocery.id
+        const idForNewGrocery = maxId + 1
+        groceryObject.id = idForNewGrocery
+        grocerys.push(groceryObject)
+}
+addToShoppingList(beer)  
+addToShoppingList(tortillas)
+addToShoppingList(cheese)
+addToShoppingList(jalapenos)
+addToShoppingList(wine)
+addToShoppingList(paperTowels)
+
+console.log(grocerys)
