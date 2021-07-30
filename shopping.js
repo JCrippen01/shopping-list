@@ -43,7 +43,23 @@ const grocerys = [
 ]
 
 for (const grocery of grocerys) {
-    console.log(`total price is $${grocery.price}`)
+    console.log(`The cost of ${grocery.item} is $${grocery.price}`)
 }
-
+const beer = {
+    item: "Beer",
+    price: 8.50,
+    brand: "Corona",
+    type: "bottle",
+    size: "6 pack"
+}
+const addToShoppingList = (groceryObject) => {
+        const lastIndex = grocerys.length - 1
+        const currentLastGrocery = grocerys[lastIndex]
+        const maxId = currentLastGrocery.id
+        const idForNewGrocery = maxId + 1
+        groceryObject.id = idForNewGrocery
+        grocerys.push(groceryObject)
+}
+addToShoppingList(beer)
+console.log(grocerys)
 //would like to know how to add together.
