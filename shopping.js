@@ -52,6 +52,46 @@ const beer = {
     type: "bottle",
     size: "6 pack"
 }
+
+const tortillas = {
+    item: "Tortillas",
+    price: 3.99,
+    brand: "El Gato",
+    type: "Flour",
+    size: "25 count"
+}
+
+const cheese = {
+    item: "Cheese",
+    price: 6.99,
+    brand: "Kroger",
+    type: "Cheddar",
+    size: "1 lb"
+}
+ 
+const jalapenos = {
+    item: "Jalapenos",
+    price: 0.59,
+    brand: "Kroger",
+    type: "Fresh",
+    size: "Medium"
+}
+    
+const wine = {
+    item: "Wine",
+    price: 25.00,
+    brand: "Coppola",
+    type: "Cab Sav",
+    size: "1 bottle"
+}
+ 
+const paperTowels = {
+    item: "Paper Towels",
+    price: 20.00,
+    brand: "Bounty",
+    type: "Mega Roll",
+    size: "12 Rolls"
+}
 const addToShoppingList = (groceryObject) => {
         const lastIndex = grocerys.length - 1
         const currentLastGrocery = grocerys[lastIndex]
@@ -60,6 +100,11 @@ const addToShoppingList = (groceryObject) => {
         groceryObject.id = idForNewGrocery
         grocerys.push(groceryObject)
 }
-addToShoppingList(beer)
+addToShoppingList(beer)  
+addToShoppingList(tortillas)
+addToShoppingList(cheese)
+addToShoppingList(jalapenos)
+addToShoppingList(wine)
+addToShoppingList(paperTowels)
+
 console.log(grocerys)
-//would like to know how to add together.
