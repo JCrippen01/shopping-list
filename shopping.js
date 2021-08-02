@@ -42,9 +42,7 @@ const grocerys = [
 
 ]
 
-for (const grocery of grocerys) {
-    console.log(`The cost of ${grocery.item} is $${grocery.price}`)
-}
+
 const beer = {
     item: "Beer",
     price: 8.50,
@@ -93,25 +91,32 @@ const paperTowels = {
     size: "12 Rolls"
 }
 const addToShoppingList = (groceryObject) => {
-        const dateCreated = Date.now()
-        groceryObject.dateCreated = dateCreated
-
         const lastIndex = grocerys.length - 1
         const currentLastGrocery = grocerys[lastIndex]
         const maxId = currentLastGrocery.id
         const idForNewGrocery = maxId + 1
+
         groceryObject.id = idForNewGrocery
+
+        const dateCreated = new Date().toLocaleDateString()
+        groceryObject.date = dateCreated
         grocerys.push(groceryObject)
-}
-addToShoppingList(beer)  
-addToShoppingList(tortillas)
-addToShoppingList(cheese)
-addToShoppingList(jalapenos)
-addToShoppingList(wine)
-addToShoppingList(paperTowels)
+        console.log (`${groceryObject.item} with ID of ${groceryObject.id} has a born on date of ${groceryObject.date}`)
+};
 
-for (grocery of grocerys) {
-    grocery.dateCreated = Date.now()
-    console.log (grocerys)
-}
+addToShoppingList(beer);
+addToShoppingList(tortillas);
+addToShoppingList(cheese);
+addToShoppingList(jalapenos);
+addToShoppingList(wine);
+addToShoppingList(paperTowels);
 
+for (const groceryObject of grocerys) {
+    if (groceryObject.price > 8) {
+        console.log(`${groceryObject.item} is re-donculisly over priced at ${groceryObject.price}, and we need some koo pins!`)
+    } else { 
+        console.log(`${groceryObject.item} is super cheap, under 8 smackers!`)
+    }
+};
+
+//Finished on 8/1/2021, Book 2 through Chapter 9, third column.
