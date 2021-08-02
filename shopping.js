@@ -93,6 +93,9 @@ const paperTowels = {
     size: "12 Rolls"
 }
 const addToShoppingList = (groceryObject) => {
+        const dateCreated = Date.now()
+        groceryObject.dateCreated = dateCreated
+
         const lastIndex = grocerys.length - 1
         const currentLastGrocery = grocerys[lastIndex]
         const maxId = currentLastGrocery.id
@@ -107,4 +110,8 @@ addToShoppingList(jalapenos)
 addToShoppingList(wine)
 addToShoppingList(paperTowels)
 
-console.log(grocerys)
+for (grocery of grocerys) {
+    grocery.dateCreated = Date.now()
+    console.log (grocerys)
+}
+
